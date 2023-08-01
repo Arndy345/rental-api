@@ -27,7 +27,7 @@ const allyConfig: AllyConfig = {
     driver: 'github',
     clientId: Env.get('GITHUB_CLIENT_ID'),
     clientSecret: Env.get('GITHUB_CLIENT_SECRET'),
-    callbackUrl: 'http://localhost:3333/api/github/callback',
+    callbackUrl: 'https://api-testing-ijzw.onrender.com/api/github/callback',
   },
   /*
 	|--------------------------------------------------------------------------
@@ -38,7 +38,7 @@ const allyConfig: AllyConfig = {
     driver: 'google',
     clientId: Env.get('GOOGLE_CLIENT_ID'),
     clientSecret: Env.get('GOOGLE_CLIENT_SECRET'),
-    callbackUrl: 'https://localhost:3333/api/google/callback',
+    callbackUrl: 'https://api-testing-ijzw.onrender.com/api/google/callback',
     scopes: ['userinfo.profile'],
     prompt: 'select_account',
     accessType: 'offline',
