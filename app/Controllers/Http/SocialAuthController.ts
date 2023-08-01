@@ -8,7 +8,7 @@ export default class SocialAuthController {
 
   public async callback({ ally, params }: HttpContextContract) {
     const provider = ally.use(params.provider)
-    console.log(provider)
+    // console.log(provider)
     /**
      * User has explicitly denied the login request
      */
@@ -43,7 +43,6 @@ export default class SocialAuthController {
         oauthProviderId: oauthUser.id,
       }
     )
-    console.log(user)
+    return user
   }
-  
 }
