@@ -14,7 +14,6 @@ export default class AuthController {
     })
     return token.toJSON()
   }
-
   public async register({ request, auth }: HttpContextContract) {
     /**
      * Create a new user

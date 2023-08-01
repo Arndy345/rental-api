@@ -11,7 +11,13 @@ export default class User extends BaseModel {
   public email: string
 
   @column({ serializeAs: null })
-  public password: string
+  public password: string | null
+
+  @column()
+  public oauthProvider: string
+
+  @column()
+  public oauthProviderId: string
 
   @column()
   public rememberMeToken?: string

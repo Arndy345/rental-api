@@ -7,7 +7,9 @@ export default class UsersSchema extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
       table.string('email', 255).notNullable().unique()
-      table.string('password', 180).notNullable()
+      table.string('password', 180).nullable()
+      table.string('oauth_provider').nullable()
+      table.string('oauth_provider_id').nullable()
       table.string('fullname').notNullable()
       table.string('phone').nullable()
       table.string('location').nullable()
