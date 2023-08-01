@@ -6,7 +6,7 @@ export default class SocialAuthController {
     return ally.use(params.provider).redirect()
   }
 
-  public async callback({ ally, auth, response, params }: HttpContextContract) {
+  public async callback({ ally, params }: HttpContextContract) {
     const provider = ally.use(params.provider)
     console.log(provider)
     /**
@@ -43,5 +43,7 @@ export default class SocialAuthController {
         oauthProviderId: oauthUser.id,
       }
     )
+    console.log(user)
   }
+  
 }
