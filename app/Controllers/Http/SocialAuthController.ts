@@ -6,9 +6,8 @@ export default class SocialAuthController {
     return ally.use(params.provider).redirect()
   }
 
-  public async callback({ ally, params }: HttpContextContract) {
+  public async callback({ ally, params, auth }: HttpContextContract) {
     const provider = ally.use(params.provider)
-    // console.log(provider)
     /**
      * User has explicitly denied the login request
      */
@@ -33,6 +32,7 @@ export default class SocialAuthController {
     /**
      * Finally, access the user
      */
+
     const oauthUser = await provider.user()
     const user = await User.firstOrCreate(
       { email: oauthUser.email },
@@ -43,6 +43,10 @@ export default class SocialAuthController {
         oauthProviderId: oauthUser.id,
       }
     )
-    return user
+    const token = await auth.use('api').login(user, {
+      expiresIn: '10 days',
+    })
+
+    return token.toJSON()
   }
 }
