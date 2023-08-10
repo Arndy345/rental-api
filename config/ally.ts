@@ -57,7 +57,7 @@ const allyConfig: AllyConfig = {
     clientId: Env.get('FACEBOOK_CLIENT_ID'),
     clientSecret: Env.get('FACEBOOK_CLIENT_SECRET'),
     callbackUrl:
-       'https://api-testing-ijzw.onrender.com/api/google/callback',
+       'https://api-testing-ijzw.onrender.com/api/facebook/callback',
       // 'http://localhost:3333/api/facebook/callback',
   },
 }
